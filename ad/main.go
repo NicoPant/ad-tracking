@@ -5,7 +5,7 @@ import (
 	"github.com/NicoPant/ad-tracking/ad/db"
 	"github.com/NicoPant/ad-tracking/ad/handler"
 	"github.com/NicoPant/ad-tracking/ad/model/ad"
-	"github.com/NicoPant/ad-tracking/ad/proto"
+	"github.com/NicoPant/ad-tracking/proto"
 	"github.com/joho/godotenv"
 	"google.golang.org/grpc"
 	"log"
@@ -32,10 +32,17 @@ func main() {
 		log.Fatalf("Failed to listen: %v", err)
 	}
 
+	conn, err := grpc.Dial("localhost:9000", grpc.WithInsecure())
+	if err != nil {
+		log.Fatalf("Failed to dial AdService: %v", err)
+	}
+	trackerClient := proto.NewTrackerServiceClient(conn)
+
 	grpcServer := grpc.NewServer()
 
 	proto.RegisterAdServiceServer(grpcServer, &handler.AdServiceServer{
-		AdRepository: adService,
+		AdRepository:  adService,
+		TrackerClient: trackerClient,
 	})
 
 	log.Println("gRPC AdService running on :8000")

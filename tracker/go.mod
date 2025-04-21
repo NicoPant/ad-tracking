@@ -1,8 +1,9 @@
-module tracker
+module github.com/NicoPant/ad-tracking/tracker
 
-go 1.24
+go 1.24.2
 
 require (
+	github.com/NicoPant/ad-tracking/proto v0.0.0-00010101000000-000000000000
 	github.com/google/uuid v1.6.0
 	github.com/joho/godotenv v1.5.1
 	go.mongodb.org/mongo-driver v1.17.3
@@ -23,5 +24,7 @@ require (
 	golang.org/x/sys v0.30.0 // indirect
 	golang.org/x/text v0.22.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250218202821-56aae31c358a // indirect
-	google.golang.org/protobuf v1.36.5 // indirect
+	google.golang.org/protobuf v1.36.6 // indirect
 )
+
+replace github.com/NicoPant/ad-tracking/proto => ../proto

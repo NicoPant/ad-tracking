@@ -276,7 +276,7 @@ const file_tracker_proto_rawDesc = "" +
 	"\atracker\x18\x01 \x01(\v2\x10.tracker.TrackerR\atracker2\xbf\x01\n" +
 	"\x0eTrackerService\x12N\n" +
 	"\rCreateTracker\x12\x1d.tracker.CreateTrackerRequest\x1a\x1e.tracker.CreateTrackerResponse\x12]\n" +
-	"\x12UpdateCountTracker\x12\".tracker.UpdateCountTrackerRequest\x1a#.tracker.UpdateCountTrackerResponseB\x15Z\x13tracker/proto;protob\x06proto3"
+	"\x12UpdateCountTracker\x12\".tracker.UpdateCountTrackerRequest\x1a#.tracker.UpdateCountTrackerResponseB\x0eZ\f/proto;protob\x06proto3"
 
 var (
 	file_tracker_proto_rawDescOnce sync.Once

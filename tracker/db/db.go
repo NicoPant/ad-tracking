@@ -3,10 +3,10 @@ package db
 import (
 	"context"
 	"fmt"
+	"github.com/NicoPant/ad-tracking/tracker/config"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"log"
-	"tracker/config"
 )
 
 var MongoClient *mongo.Client

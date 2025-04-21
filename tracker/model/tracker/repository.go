@@ -2,9 +2,9 @@ package tracker
 
 import (
 	"context"
+	"github.com/NicoPant/ad-tracking/tracker/config"
+	"github.com/NicoPant/ad-tracking/tracker/db"
 	"github.com/google/uuid"
-	"tracker/config"
-	"tracker/db"
 )
 
 const Collection = "trackers"

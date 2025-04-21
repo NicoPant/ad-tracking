@@ -4,19 +4,21 @@ import (
 	"context"
 	"fmt"
 	"github.com/NicoPant/ad-tracking/ad/model/ad"
-	"github.com/NicoPant/ad-tracking/ad/proto"
+	"github.com/NicoPant/ad-tracking/proto"
 	"github.com/google/uuid"
 )
 
 type AdServiceServer struct {
 	proto.UnimplementedAdServiceServer
-	AdRepository ad.AdRepository
+	AdRepository  ad.AdRepository
+	TrackerClient proto.TrackerServiceClient
 }
 
 func (h *AdServiceServer) CreateAd(ctx context.Context, req *proto.CreateAdRequest) (*proto.CreateAdResponse, error) {
-	fmt.Println("CreateAd called", req)
+	newUuid := uuid.NewString()
+
 	res, err := h.AdRepository.CreateAd(ctx, &ad.Ad{
-		Id:          uuid.NewString(),
+		Id:          newUuid,
 		Title:       req.Title,
 		Description: req.Description,
 		Url:         req.Url,
@@ -27,8 +29,14 @@ func (h *AdServiceServer) CreateAd(ctx context.Context, req *proto.CreateAdReque
 	}
 	fmt.Println("Ad created successfully:", res)
 
+	_, err = h.TrackerClient.CreateTracker(ctx, &proto.CreateTrackerRequest{AdId: newUuid})
+	if err != nil {
+		fmt.Println("Error creating tracker:", err)
+		return nil, err
+	}
+
 	return &proto.CreateAdResponse{
-		Id: "12345",
+		Id: newUuid,
 	}, nil
 }
 

@@ -303,7 +303,7 @@ const file_ad_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\tR\x02id2|\n" +
 	"\tAdService\x128\n" +
 	"\tGetAdById\x12\x14.ad.GetAdByIdRequest\x1a\x15.ad.GetAdByIdResponse\x125\n" +
-	"\bCreateAd\x12\x13.ad.CreateAdRequest\x1a\x14.ad.CreateAdResponseB\x10Z\x0ead/proto;protob\x06proto3"
+	"\bCreateAd\x12\x13.ad.CreateAdRequest\x1a\x14.ad.CreateAdResponseB\x0eZ\f/proto;protob\x06proto3"
 
 var (
 	file_ad_proto_rawDescOnce sync.Once

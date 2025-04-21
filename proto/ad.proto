@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package ad;
 
-option go_package = "ad/proto;proto"; // replace with your actual Go module path
+option go_package = "/proto;proto"; // replace with your actual Go module path
 
 service AdService {
   rpc GetAdById(GetAdByIdRequest) returns (GetAdByIdResponse);

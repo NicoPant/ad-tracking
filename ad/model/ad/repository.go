@@ -1,10 +1,10 @@
 package ad
 
 import (
-	"ad/config"
-	"ad/db"
 	"context"
 	"fmt"
+	"github.com/NicoPant/ad-tracking/ad/config"
+	"github.com/NicoPant/ad-tracking/ad/db"
 	"go.mongodb.org/mongo-driver/bson"
 )
 

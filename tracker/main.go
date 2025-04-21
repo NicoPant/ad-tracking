@@ -1,11 +1,11 @@
 package main
 
 import (
-	"fmt"
-	"tracker/config"
-	"tracker/db"
-	"tracker/model/tracker"
-	//"tracker/proto"
+	"github.com/NicoPant/ad-tracking/proto"
+	"github.com/NicoPant/ad-tracking/tracker/config"
+	"github.com/NicoPant/ad-tracking/tracker/db"
+	"github.com/NicoPant/ad-tracking/tracker/handler"
+	"github.com/NicoPant/ad-tracking/tracker/model/tracker"
 	"github.com/joho/godotenv"
 	"google.golang.org/grpc"
 	"log"
@@ -27,8 +27,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println(trackerService)
-
 	lis, err := net.Listen("tcp", ":9000")
 	if err != nil {
 		log.Fatalf("Failed to listen: %v", err)
@@ -36,9 +34,9 @@ func main() {
 
 	grpcServer := grpc.NewServer()
 
-	/*proto.RegisterAdServiceServer(grpcServer, &handler.AdServiceServer{
-	  AdRepository: adService,
-	})*/
+	proto.RegisterTrackerServiceServer(grpcServer, &handler.TrackerServiceServer{
+		TrackerRepository: trackerService,
+	})
 
 	log.Println("gRPC AdService running on :9000")
 	if err := grpcServer.Serve(lis); err != nil {
