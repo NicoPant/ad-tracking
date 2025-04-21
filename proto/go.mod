@@ -1,4 +1,4 @@
-module github.com/NicoPant/ad-tracking/proto
+module github.com/NicoPant/ad-tracking/proto/protos
 
 go 1.24.2
 
