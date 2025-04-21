@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v6.30.1
-// source: protos/ad.proto
+// source: ad.proto
 
 package proto
 
@@ -33,7 +33,7 @@ type Ad struct {
 
 func (x *Ad) Reset() {
 	*x = Ad{}
-	mi := &file_protos_ad_proto_msgTypes[0]
+	mi := &file_ad_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45,7 +45,7 @@ func (x *Ad) String() string {
 func (*Ad) ProtoMessage() {}
 
 func (x *Ad) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_ad_proto_msgTypes[0]
+	mi := &file_ad_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -58,7 +58,7 @@ func (x *Ad) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Ad.ProtoReflect.Descriptor instead.
 func (*Ad) Descriptor() ([]byte, []int) {
-	return file_protos_ad_proto_rawDescGZIP(), []int{0}
+	return file_ad_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Ad) GetId() string {
@@ -98,7 +98,7 @@ type GetAdByIdRequest struct {
 
 func (x *GetAdByIdRequest) Reset() {
 	*x = GetAdByIdRequest{}
-	mi := &file_protos_ad_proto_msgTypes[1]
+	mi := &file_ad_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -110,7 +110,7 @@ func (x *GetAdByIdRequest) String() string {
 func (*GetAdByIdRequest) ProtoMessage() {}
 
 func (x *GetAdByIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_ad_proto_msgTypes[1]
+	mi := &file_ad_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -123,7 +123,7 @@ func (x *GetAdByIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAdByIdRequest.ProtoReflect.Descriptor instead.
 func (*GetAdByIdRequest) Descriptor() ([]byte, []int) {
-	return file_protos_ad_proto_rawDescGZIP(), []int{1}
+	return file_ad_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GetAdByIdRequest) GetId() string {
@@ -142,7 +142,7 @@ type GetAdByIdResponse struct {
 
 func (x *GetAdByIdResponse) Reset() {
 	*x = GetAdByIdResponse{}
-	mi := &file_protos_ad_proto_msgTypes[2]
+	mi := &file_ad_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -154,7 +154,7 @@ func (x *GetAdByIdResponse) String() string {
 func (*GetAdByIdResponse) ProtoMessage() {}
 
 func (x *GetAdByIdResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_ad_proto_msgTypes[2]
+	mi := &file_ad_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -167,7 +167,7 @@ func (x *GetAdByIdResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetAdByIdResponse.ProtoReflect.Descriptor instead.
 func (*GetAdByIdResponse) Descriptor() ([]byte, []int) {
-	return file_protos_ad_proto_rawDescGZIP(), []int{2}
+	return file_ad_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetAdByIdResponse) GetAd() *Ad {
@@ -188,7 +188,7 @@ type CreateAdRequest struct {
 
 func (x *CreateAdRequest) Reset() {
 	*x = CreateAdRequest{}
-	mi := &file_protos_ad_proto_msgTypes[3]
+	mi := &file_ad_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -200,7 +200,7 @@ func (x *CreateAdRequest) String() string {
 func (*CreateAdRequest) ProtoMessage() {}
 
 func (x *CreateAdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_ad_proto_msgTypes[3]
+	mi := &file_ad_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -213,7 +213,7 @@ func (x *CreateAdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAdRequest.ProtoReflect.Descriptor instead.
 func (*CreateAdRequest) Descriptor() ([]byte, []int) {
-	return file_protos_ad_proto_rawDescGZIP(), []int{3}
+	return file_ad_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateAdRequest) GetTitle() string {
@@ -246,7 +246,7 @@ type CreateAdResponse struct {
 
 func (x *CreateAdResponse) Reset() {
 	*x = CreateAdResponse{}
-	mi := &file_protos_ad_proto_msgTypes[4]
+	mi := &file_ad_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -258,7 +258,7 @@ func (x *CreateAdResponse) String() string {
 func (*CreateAdResponse) ProtoMessage() {}
 
 func (x *CreateAdResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_ad_proto_msgTypes[4]
+	mi := &file_ad_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -271,7 +271,7 @@ func (x *CreateAdResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAdResponse.ProtoReflect.Descriptor instead.
 func (*CreateAdResponse) Descriptor() ([]byte, []int) {
-	return file_protos_ad_proto_rawDescGZIP(), []int{4}
+	return file_ad_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CreateAdResponse) GetId() string {
@@ -281,11 +281,11 @@ func (x *CreateAdResponse) GetId() string {
 	return ""
 }
 
-var File_protos_ad_proto protoreflect.FileDescriptor
+var File_ad_proto protoreflect.FileDescriptor
 
-const file_protos_ad_proto_rawDesc = "" +
+const file_ad_proto_rawDesc = "" +
 	"\n" +
-	"\x0fprotos/ad.proto\x12\x02ad\"^\n" +
+	"\bad.proto\x12\x02ad\"^\n" +
 	"\x02Ad\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05title\x18\x02 \x01(\tR\x05title\x12 \n" +
@@ -306,26 +306,26 @@ const file_protos_ad_proto_rawDesc = "" +
 	"\bCreateAd\x12\x13.ad.CreateAdRequest\x1a\x14.ad.CreateAdResponseB\x10Z\x0ead/proto;protob\x06proto3"
 
 var (
-	file_protos_ad_proto_rawDescOnce sync.Once
-	file_protos_ad_proto_rawDescData []byte
+	file_ad_proto_rawDescOnce sync.Once
+	file_ad_proto_rawDescData []byte
 )
 
-func file_protos_ad_proto_rawDescGZIP() []byte {
-	file_protos_ad_proto_rawDescOnce.Do(func() {
-		file_protos_ad_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_protos_ad_proto_rawDesc), len(file_protos_ad_proto_rawDesc)))
+func file_ad_proto_rawDescGZIP() []byte {
+	file_ad_proto_rawDescOnce.Do(func() {
+		file_ad_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_ad_proto_rawDesc), len(file_ad_proto_rawDesc)))
 	})
-	return file_protos_ad_proto_rawDescData
+	return file_ad_proto_rawDescData
 }
 
-var file_protos_ad_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_protos_ad_proto_goTypes = []any{
+var file_ad_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_ad_proto_goTypes = []any{
 	(*Ad)(nil),                // 0: ad.Ad
 	(*GetAdByIdRequest)(nil),  // 1: ad.GetAdByIdRequest
 	(*GetAdByIdResponse)(nil), // 2: ad.GetAdByIdResponse
 	(*CreateAdRequest)(nil),   // 3: ad.CreateAdRequest
 	(*CreateAdResponse)(nil),  // 4: ad.CreateAdResponse
 }
-var file_protos_ad_proto_depIdxs = []int32{
+var file_ad_proto_depIdxs = []int32{
 	0, // 0: ad.GetAdByIdResponse.ad:type_name -> ad.Ad
 	1, // 1: ad.AdService.GetAdById:input_type -> ad.GetAdByIdRequest
 	3, // 2: ad.AdService.CreateAd:input_type -> ad.CreateAdRequest
@@ -338,26 +338,26 @@ var file_protos_ad_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_protos_ad_proto_init() }
-func file_protos_ad_proto_init() {
-	if File_protos_ad_proto != nil {
+func init() { file_ad_proto_init() }
+func file_ad_proto_init() {
+	if File_ad_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_protos_ad_proto_rawDesc), len(file_protos_ad_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ad_proto_rawDesc), len(file_ad_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_protos_ad_proto_goTypes,
-		DependencyIndexes: file_protos_ad_proto_depIdxs,
-		MessageInfos:      file_protos_ad_proto_msgTypes,
+		GoTypes:           file_ad_proto_goTypes,
+		DependencyIndexes: file_ad_proto_depIdxs,
+		MessageInfos:      file_ad_proto_msgTypes,
 	}.Build()
-	File_protos_ad_proto = out.File
-	file_protos_ad_proto_goTypes = nil
-	file_protos_ad_proto_depIdxs = nil
+	File_ad_proto = out.File
+	file_ad_proto_goTypes = nil
+	file_ad_proto_depIdxs = nil
 }

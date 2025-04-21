@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v6.30.1
-// source: protos/tracker.proto
+// source: tracker.proto
 
 package proto
 
@@ -155,5 +155,5 @@ var TrackerService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "protos/tracker.proto",
+	Metadata: "tracker.proto",
 }

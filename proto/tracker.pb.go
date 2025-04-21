@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v6.30.1
-// source: protos/tracker.proto
+// source: tracker.proto
 
 package proto
 
@@ -32,7 +32,7 @@ type Tracker struct {
 
 func (x *Tracker) Reset() {
 	*x = Tracker{}
-	mi := &file_protos_tracker_proto_msgTypes[0]
+	mi := &file_tracker_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44,7 +44,7 @@ func (x *Tracker) String() string {
 func (*Tracker) ProtoMessage() {}
 
 func (x *Tracker) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_tracker_proto_msgTypes[0]
+	mi := &file_tracker_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,7 +57,7 @@ func (x *Tracker) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Tracker.ProtoReflect.Descriptor instead.
 func (*Tracker) Descriptor() ([]byte, []int) {
-	return file_protos_tracker_proto_rawDescGZIP(), []int{0}
+	return file_tracker_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Tracker) GetId() string {
@@ -90,7 +90,7 @@ type CreateTrackerRequest struct {
 
 func (x *CreateTrackerRequest) Reset() {
 	*x = CreateTrackerRequest{}
-	mi := &file_protos_tracker_proto_msgTypes[1]
+	mi := &file_tracker_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -102,7 +102,7 @@ func (x *CreateTrackerRequest) String() string {
 func (*CreateTrackerRequest) ProtoMessage() {}
 
 func (x *CreateTrackerRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_tracker_proto_msgTypes[1]
+	mi := &file_tracker_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -115,7 +115,7 @@ func (x *CreateTrackerRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateTrackerRequest.ProtoReflect.Descriptor instead.
 func (*CreateTrackerRequest) Descriptor() ([]byte, []int) {
-	return file_protos_tracker_proto_rawDescGZIP(), []int{1}
+	return file_tracker_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CreateTrackerRequest) GetAdId() string {
@@ -134,7 +134,7 @@ type CreateTrackerResponse struct {
 
 func (x *CreateTrackerResponse) Reset() {
 	*x = CreateTrackerResponse{}
-	mi := &file_protos_tracker_proto_msgTypes[2]
+	mi := &file_tracker_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -146,7 +146,7 @@ func (x *CreateTrackerResponse) String() string {
 func (*CreateTrackerResponse) ProtoMessage() {}
 
 func (x *CreateTrackerResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_tracker_proto_msgTypes[2]
+	mi := &file_tracker_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -159,7 +159,7 @@ func (x *CreateTrackerResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateTrackerResponse.ProtoReflect.Descriptor instead.
 func (*CreateTrackerResponse) Descriptor() ([]byte, []int) {
-	return file_protos_tracker_proto_rawDescGZIP(), []int{2}
+	return file_tracker_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateTrackerResponse) GetTracker() *Tracker {
@@ -178,7 +178,7 @@ type UpdateCountTrackerRequest struct {
 
 func (x *UpdateCountTrackerRequest) Reset() {
 	*x = UpdateCountTrackerRequest{}
-	mi := &file_protos_tracker_proto_msgTypes[3]
+	mi := &file_tracker_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -190,7 +190,7 @@ func (x *UpdateCountTrackerRequest) String() string {
 func (*UpdateCountTrackerRequest) ProtoMessage() {}
 
 func (x *UpdateCountTrackerRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_tracker_proto_msgTypes[3]
+	mi := &file_tracker_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -203,7 +203,7 @@ func (x *UpdateCountTrackerRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCountTrackerRequest.ProtoReflect.Descriptor instead.
 func (*UpdateCountTrackerRequest) Descriptor() ([]byte, []int) {
-	return file_protos_tracker_proto_rawDescGZIP(), []int{3}
+	return file_tracker_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *UpdateCountTrackerRequest) GetAdId() string {
@@ -222,7 +222,7 @@ type UpdateCountTrackerResponse struct {
 
 func (x *UpdateCountTrackerResponse) Reset() {
 	*x = UpdateCountTrackerResponse{}
-	mi := &file_protos_tracker_proto_msgTypes[4]
+	mi := &file_tracker_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -234,7 +234,7 @@ func (x *UpdateCountTrackerResponse) String() string {
 func (*UpdateCountTrackerResponse) ProtoMessage() {}
 
 func (x *UpdateCountTrackerResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_tracker_proto_msgTypes[4]
+	mi := &file_tracker_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -247,7 +247,7 @@ func (x *UpdateCountTrackerResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateCountTrackerResponse.ProtoReflect.Descriptor instead.
 func (*UpdateCountTrackerResponse) Descriptor() ([]byte, []int) {
-	return file_protos_tracker_proto_rawDescGZIP(), []int{4}
+	return file_tracker_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *UpdateCountTrackerResponse) GetTracker() *Tracker {
@@ -257,11 +257,11 @@ func (x *UpdateCountTrackerResponse) GetTracker() *Tracker {
 	return nil
 }
 
-var File_protos_tracker_proto protoreflect.FileDescriptor
+var File_tracker_proto protoreflect.FileDescriptor
 
-const file_protos_tracker_proto_rawDesc = "" +
+const file_tracker_proto_rawDesc = "" +
 	"\n" +
-	"\x14protos/tracker.proto\x12\atracker\"C\n" +
+	"\rtracker.proto\x12\atracker\"C\n" +
 	"\aTracker\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04adId\x18\x02 \x01(\tR\x04adId\x12\x14\n" +
@@ -279,26 +279,26 @@ const file_protos_tracker_proto_rawDesc = "" +
 	"\x12UpdateCountTracker\x12\".tracker.UpdateCountTrackerRequest\x1a#.tracker.UpdateCountTrackerResponseB\x15Z\x13tracker/proto;protob\x06proto3"
 
 var (
-	file_protos_tracker_proto_rawDescOnce sync.Once
-	file_protos_tracker_proto_rawDescData []byte
+	file_tracker_proto_rawDescOnce sync.Once
+	file_tracker_proto_rawDescData []byte
 )
 
-func file_protos_tracker_proto_rawDescGZIP() []byte {
-	file_protos_tracker_proto_rawDescOnce.Do(func() {
-		file_protos_tracker_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_protos_tracker_proto_rawDesc), len(file_protos_tracker_proto_rawDesc)))
+func file_tracker_proto_rawDescGZIP() []byte {
+	file_tracker_proto_rawDescOnce.Do(func() {
+		file_tracker_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_tracker_proto_rawDesc), len(file_tracker_proto_rawDesc)))
 	})
-	return file_protos_tracker_proto_rawDescData
+	return file_tracker_proto_rawDescData
 }
 
-var file_protos_tracker_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_protos_tracker_proto_goTypes = []any{
+var file_tracker_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_tracker_proto_goTypes = []any{
 	(*Tracker)(nil),                    // 0: tracker.Tracker
 	(*CreateTrackerRequest)(nil),       // 1: tracker.CreateTrackerRequest
 	(*CreateTrackerResponse)(nil),      // 2: tracker.CreateTrackerResponse
 	(*UpdateCountTrackerRequest)(nil),  // 3: tracker.UpdateCountTrackerRequest
 	(*UpdateCountTrackerResponse)(nil), // 4: tracker.UpdateCountTrackerResponse
 }
-var file_protos_tracker_proto_depIdxs = []int32{
+var file_tracker_proto_depIdxs = []int32{
 	0, // 0: tracker.CreateTrackerResponse.tracker:type_name -> tracker.Tracker
 	0, // 1: tracker.UpdateCountTrackerResponse.tracker:type_name -> tracker.Tracker
 	1, // 2: tracker.TrackerService.CreateTracker:input_type -> tracker.CreateTrackerRequest
@@ -312,26 +312,26 @@ var file_protos_tracker_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_protos_tracker_proto_init() }
-func file_protos_tracker_proto_init() {
-	if File_protos_tracker_proto != nil {
+func init() { file_tracker_proto_init() }
+func file_tracker_proto_init() {
+	if File_tracker_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_protos_tracker_proto_rawDesc), len(file_protos_tracker_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_tracker_proto_rawDesc), len(file_tracker_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_protos_tracker_proto_goTypes,
-		DependencyIndexes: file_protos_tracker_proto_depIdxs,
-		MessageInfos:      file_protos_tracker_proto_msgTypes,
+		GoTypes:           file_tracker_proto_goTypes,
+		DependencyIndexes: file_tracker_proto_depIdxs,
+		MessageInfos:      file_tracker_proto_msgTypes,
 	}.Build()
-	File_protos_tracker_proto = out.File
-	file_protos_tracker_proto_goTypes = nil
-	file_protos_tracker_proto_depIdxs = nil
+	File_tracker_proto = out.File
+	file_tracker_proto_goTypes = nil
+	file_tracker_proto_depIdxs = nil
 }
