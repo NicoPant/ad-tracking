@@ -133,27 +133,27 @@ func (x *GetAdByIdRequest) GetId() string {
 	return ""
 }
 
-type AdResponse struct {
+type GetAdByIdResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Ad            *Ad                    `protobuf:"bytes,1,opt,name=ad,proto3" json:"ad,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *AdResponse) Reset() {
-	*x = AdResponse{}
+func (x *GetAdByIdResponse) Reset() {
+	*x = GetAdByIdResponse{}
 	mi := &file_proto_ad_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *AdResponse) String() string {
+func (x *GetAdByIdResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AdResponse) ProtoMessage() {}
+func (*GetAdByIdResponse) ProtoMessage() {}
 
-func (x *AdResponse) ProtoReflect() protoreflect.Message {
+func (x *GetAdByIdResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_ad_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -165,12 +165,12 @@ func (x *AdResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AdResponse.ProtoReflect.Descriptor instead.
-func (*AdResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetAdByIdResponse.ProtoReflect.Descriptor instead.
+func (*GetAdByIdResponse) Descriptor() ([]byte, []int) {
 	return file_proto_ad_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *AdResponse) GetAd() *Ad {
+func (x *GetAdByIdResponse) GetAd() *Ad {
 	if x != nil {
 		return x.Ad
 	}
@@ -292,18 +292,17 @@ const file_proto_ad_proto_rawDesc = "" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x10\n" +
 	"\x03url\x18\x04 \x01(\tR\x03url\"\"\n" +
 	"\x10GetAdByIdRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\"$\n" +
-	"\n" +
-	"AdResponse\x12\x16\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"+\n" +
+	"\x11GetAdByIdResponse\x12\x16\n" +
 	"\x02ad\x18\x01 \x01(\v2\x06.ad.AdR\x02ad\"[\n" +
 	"\x0fCreateAdRequest\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x12\x10\n" +
 	"\x03url\x18\x03 \x01(\tR\x03url\"\"\n" +
 	"\x10CreateAdResponse\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id2u\n" +
-	"\tAdService\x121\n" +
-	"\tGetAdById\x12\x14.ad.GetAdByIdRequest\x1a\x0e.ad.AdResponse\x125\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id2|\n" +
+	"\tAdService\x128\n" +
+	"\tGetAdById\x12\x14.ad.GetAdByIdRequest\x1a\x15.ad.GetAdByIdResponse\x125\n" +
 	"\bCreateAd\x12\x13.ad.CreateAdRequest\x1a\x14.ad.CreateAdResponseB\x10Z\x0ead/proto;protob\x06proto3"
 
 var (
@@ -320,17 +319,17 @@ func file_proto_ad_proto_rawDescGZIP() []byte {
 
 var file_proto_ad_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_proto_ad_proto_goTypes = []any{
-	(*Ad)(nil),               // 0: ad.Ad
-	(*GetAdByIdRequest)(nil), // 1: ad.GetAdByIdRequest
-	(*AdResponse)(nil),       // 2: ad.AdResponse
-	(*CreateAdRequest)(nil),  // 3: ad.CreateAdRequest
-	(*CreateAdResponse)(nil), // 4: ad.CreateAdResponse
+	(*Ad)(nil),                // 0: ad.Ad
+	(*GetAdByIdRequest)(nil),  // 1: ad.GetAdByIdRequest
+	(*GetAdByIdResponse)(nil), // 2: ad.GetAdByIdResponse
+	(*CreateAdRequest)(nil),   // 3: ad.CreateAdRequest
+	(*CreateAdResponse)(nil),  // 4: ad.CreateAdResponse
 }
 var file_proto_ad_proto_depIdxs = []int32{
-	0, // 0: ad.AdResponse.ad:type_name -> ad.Ad
+	0, // 0: ad.GetAdByIdResponse.ad:type_name -> ad.Ad
 	1, // 1: ad.AdService.GetAdById:input_type -> ad.GetAdByIdRequest
 	3, // 2: ad.AdService.CreateAd:input_type -> ad.CreateAdRequest
-	2, // 3: ad.AdService.GetAdById:output_type -> ad.AdResponse
+	2, // 3: ad.AdService.GetAdById:output_type -> ad.GetAdByIdResponse
 	4, // 4: ad.AdService.CreateAd:output_type -> ad.CreateAdResponse
 	3, // [3:5] is the sub-list for method output_type
 	1, // [1:3] is the sub-list for method input_type

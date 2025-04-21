@@ -5,7 +5,7 @@ package ad;
 option go_package = "ad/proto;proto"; // replace with your actual Go module path
 
 service AdService {
-  rpc GetAdById(GetAdByIdRequest) returns (AdResponse);
+  rpc GetAdById(GetAdByIdRequest) returns (GetAdByIdResponse);
   rpc CreateAd(CreateAdRequest) returns (CreateAdResponse);
 }
 
@@ -20,7 +20,7 @@ message GetAdByIdRequest {
   string id = 1;
 }
 
-message AdResponse {
+message GetAdByIdResponse {
   Ad ad = 1;
 }
 

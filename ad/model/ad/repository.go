@@ -12,7 +12,7 @@ const Collection = "ads"
 
 type AdRepository interface {
 	GetAdById(ctx context.Context, id string) (*Ad, error)
-	CreateAd(ctx context.Context, ad *Ad) error
+	CreateAd(ctx context.Context, ad *Ad) (interface{}, error)
 }
 
 type AdService struct {
@@ -40,16 +40,16 @@ func (a *AdService) GetAdById(ctx context.Context, id string) (*Ad, error) {
 	return &ad, nil
 }
 
-func (a *AdService) CreateAd(ctx context.Context, ad *Ad) error {
+func (a *AdService) CreateAd(ctx context.Context, ad *Ad) (interface{}, error) {
 	fmt.Println("repository")
 	collection := db.GetCollection(Collection, a.cfg)
 	ctx, cancel := context.WithTimeout(ctx, a.cfg.Timeout)
 	defer cancel()
 
-	_, err := collection.InsertOne(ctx, ad)
+	res, err := collection.InsertOne(ctx, ad)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
-	return nil
+	return res, nil
 }

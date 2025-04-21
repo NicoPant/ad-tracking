@@ -27,7 +27,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AdServiceClient interface {
-	GetAdById(ctx context.Context, in *GetAdByIdRequest, opts ...grpc.CallOption) (*AdResponse, error)
+	GetAdById(ctx context.Context, in *GetAdByIdRequest, opts ...grpc.CallOption) (*GetAdByIdResponse, error)
 	CreateAd(ctx context.Context, in *CreateAdRequest, opts ...grpc.CallOption) (*CreateAdResponse, error)
 }
 
@@ -39,9 +39,9 @@ func NewAdServiceClient(cc grpc.ClientConnInterface) AdServiceClient {
 	return &adServiceClient{cc}
 }
 
-func (c *adServiceClient) GetAdById(ctx context.Context, in *GetAdByIdRequest, opts ...grpc.CallOption) (*AdResponse, error) {
+func (c *adServiceClient) GetAdById(ctx context.Context, in *GetAdByIdRequest, opts ...grpc.CallOption) (*GetAdByIdResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(AdResponse)
+	out := new(GetAdByIdResponse)
 	err := c.cc.Invoke(ctx, AdService_GetAdById_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -63,7 +63,7 @@ func (c *adServiceClient) CreateAd(ctx context.Context, in *CreateAdRequest, opt
 // All implementations must embed UnimplementedAdServiceServer
 // for forward compatibility.
 type AdServiceServer interface {
-	GetAdById(context.Context, *GetAdByIdRequest) (*AdResponse, error)
+	GetAdById(context.Context, *GetAdByIdRequest) (*GetAdByIdResponse, error)
 	CreateAd(context.Context, *CreateAdRequest) (*CreateAdResponse, error)
 	mustEmbedUnimplementedAdServiceServer()
 }
@@ -75,7 +75,7 @@ type AdServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedAdServiceServer struct{}
 
-func (UnimplementedAdServiceServer) GetAdById(context.Context, *GetAdByIdRequest) (*AdResponse, error) {
+func (UnimplementedAdServiceServer) GetAdById(context.Context, *GetAdByIdRequest) (*GetAdByIdResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAdById not implemented")
 }
 func (UnimplementedAdServiceServer) CreateAd(context.Context, *CreateAdRequest) (*CreateAdResponse, error) {
