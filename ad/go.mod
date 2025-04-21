@@ -1,6 +1,8 @@
-module ad
+module github.com/NicoPant/ad-tracking/ad
 
 go 1.24
+
+replace github.com/NicoPant/ad-tracking/proto => ../proto
 
 require (
 	github.com/google/uuid v1.6.0

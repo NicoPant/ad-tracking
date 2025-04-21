@@ -1,10 +1,10 @@
 package handler
 
 import (
-	"ad/model/ad"
-	"ad/proto"
 	"context"
 	"fmt"
+	"github.com/NicoPant/ad-tracking/ad/model/ad"
+	"github.com/NicoPant/ad-tracking/ad/proto"
 	"github.com/google/uuid"
 )
 

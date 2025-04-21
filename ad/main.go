@@ -1,11 +1,11 @@
 package main
 
 import (
-	"ad/config"
-	"ad/db"
-	"ad/handler"
-	"ad/model/ad"
-	"ad/proto"
+	"github.com/NicoPant/ad-tracking/ad/config"
+	"github.com/NicoPant/ad-tracking/ad/db"
+	"github.com/NicoPant/ad-tracking/ad/handler"
+	"github.com/NicoPant/ad-tracking/ad/model/ad"
+	"github.com/NicoPant/ad-tracking/ad/proto"
 	"github.com/joho/godotenv"
 	"google.golang.org/grpc"
 	"log"

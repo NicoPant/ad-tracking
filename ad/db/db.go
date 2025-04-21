@@ -1,9 +1,9 @@
 package db
 
 import (
-	"ad/config"
 	"context"
 	"fmt"
+	"github.com/NicoPant/ad-tracking/ad/config"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"log"
