@@ -21,6 +21,7 @@ const _ = grpc.SupportPackageIsVersion9
 const (
 	AdService_GetAdById_FullMethodName = "/ad.AdService/GetAdById"
 	AdService_CreateAd_FullMethodName  = "/ad.AdService/CreateAd"
+	AdService_ServeAd_FullMethodName   = "/ad.AdService/ServeAd"
 )
 
 // AdServiceClient is the client API for AdService service.
@@ -29,6 +30,7 @@ const (
 type AdServiceClient interface {
 	GetAdById(ctx context.Context, in *GetAdByIdRequest, opts ...grpc.CallOption) (*GetAdByIdResponse, error)
 	CreateAd(ctx context.Context, in *CreateAdRequest, opts ...grpc.CallOption) (*CreateAdResponse, error)
+	ServeAd(ctx context.Context, in *ServeAdRequest, opts ...grpc.CallOption) (*ServeAdResponse, error)
 }
 
 type adServiceClient struct {
@@ -59,12 +61,23 @@ func (c *adServiceClient) CreateAd(ctx context.Context, in *CreateAdRequest, opt
 	return out, nil
 }
 
+func (c *adServiceClient) ServeAd(ctx context.Context, in *ServeAdRequest, opts ...grpc.CallOption) (*ServeAdResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ServeAdResponse)
+	err := c.cc.Invoke(ctx, AdService_ServeAd_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AdServiceServer is the server API for AdService service.
 // All implementations must embed UnimplementedAdServiceServer
 // for forward compatibility.
 type AdServiceServer interface {
 	GetAdById(context.Context, *GetAdByIdRequest) (*GetAdByIdResponse, error)
 	CreateAd(context.Context, *CreateAdRequest) (*CreateAdResponse, error)
+	ServeAd(context.Context, *ServeAdRequest) (*ServeAdResponse, error)
 	mustEmbedUnimplementedAdServiceServer()
 }
 
@@ -80,6 +93,9 @@ func (UnimplementedAdServiceServer) GetAdById(context.Context, *GetAdByIdRequest
 }
 func (UnimplementedAdServiceServer) CreateAd(context.Context, *CreateAdRequest) (*CreateAdResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateAd not implemented")
+}
+func (UnimplementedAdServiceServer) ServeAd(context.Context, *ServeAdRequest) (*ServeAdResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ServeAd not implemented")
 }
 func (UnimplementedAdServiceServer) mustEmbedUnimplementedAdServiceServer() {}
 func (UnimplementedAdServiceServer) testEmbeddedByValue()                   {}
@@ -138,6 +154,24 @@ func _AdService_CreateAd_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _AdService_ServeAd_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ServeAdRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdServiceServer).ServeAd(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdService_ServeAd_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdServiceServer).ServeAd(ctx, req.(*ServeAdRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // AdService_ServiceDesc is the grpc.ServiceDesc for AdService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -152,6 +186,10 @@ var AdService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateAd",
 			Handler:    _AdService_CreateAd_Handler,
+		},
+		{
+			MethodName: "ServeAd",
+			Handler:    _AdService_ServeAd_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -281,6 +281,94 @@ func (x *CreateAdResponse) GetId() string {
 	return ""
 }
 
+type ServeAdRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AdId          string                 `protobuf:"bytes,1,opt,name=adId,proto3" json:"adId,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ServeAdRequest) Reset() {
+	*x = ServeAdRequest{}
+	mi := &file_ad_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ServeAdRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ServeAdRequest) ProtoMessage() {}
+
+func (x *ServeAdRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_ad_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ServeAdRequest.ProtoReflect.Descriptor instead.
+func (*ServeAdRequest) Descriptor() ([]byte, []int) {
+	return file_ad_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *ServeAdRequest) GetAdId() string {
+	if x != nil {
+		return x.AdId
+	}
+	return ""
+}
+
+type ServeAdResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Url           string                 `protobuf:"bytes,4,opt,name=url,proto3" json:"url,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ServeAdResponse) Reset() {
+	*x = ServeAdResponse{}
+	mi := &file_ad_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ServeAdResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ServeAdResponse) ProtoMessage() {}
+
+func (x *ServeAdResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_ad_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ServeAdResponse.ProtoReflect.Descriptor instead.
+func (*ServeAdResponse) Descriptor() ([]byte, []int) {
+	return file_ad_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *ServeAdResponse) GetUrl() string {
+	if x != nil {
+		return x.Url
+	}
+	return ""
+}
+
 var File_ad_proto protoreflect.FileDescriptor
 
 const file_ad_proto_rawDesc = "" +
@@ -300,10 +388,15 @@ const file_ad_proto_rawDesc = "" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x12\x10\n" +
 	"\x03url\x18\x03 \x01(\tR\x03url\"\"\n" +
 	"\x10CreateAdResponse\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id2|\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"$\n" +
+	"\x0eServeAdRequest\x12\x12\n" +
+	"\x04adId\x18\x01 \x01(\tR\x04adId\"#\n" +
+	"\x0fServeAdResponse\x12\x10\n" +
+	"\x03url\x18\x04 \x01(\tR\x03url2\xb0\x01\n" +
 	"\tAdService\x128\n" +
 	"\tGetAdById\x12\x14.ad.GetAdByIdRequest\x1a\x15.ad.GetAdByIdResponse\x125\n" +
-	"\bCreateAd\x12\x13.ad.CreateAdRequest\x1a\x14.ad.CreateAdResponseB\x0eZ\f/proto;protob\x06proto3"
+	"\bCreateAd\x12\x13.ad.CreateAdRequest\x1a\x14.ad.CreateAdResponse\x122\n" +
+	"\aServeAd\x12\x12.ad.ServeAdRequest\x1a\x13.ad.ServeAdResponseB\x0eZ\f/proto;protob\x06proto3"
 
 var (
 	file_ad_proto_rawDescOnce sync.Once
@@ -317,22 +410,26 @@ func file_ad_proto_rawDescGZIP() []byte {
 	return file_ad_proto_rawDescData
 }
 
-var file_ad_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_ad_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_ad_proto_goTypes = []any{
 	(*Ad)(nil),                // 0: ad.Ad
 	(*GetAdByIdRequest)(nil),  // 1: ad.GetAdByIdRequest
 	(*GetAdByIdResponse)(nil), // 2: ad.GetAdByIdResponse
 	(*CreateAdRequest)(nil),   // 3: ad.CreateAdRequest
 	(*CreateAdResponse)(nil),  // 4: ad.CreateAdResponse
+	(*ServeAdRequest)(nil),    // 5: ad.ServeAdRequest
+	(*ServeAdResponse)(nil),   // 6: ad.ServeAdResponse
 }
 var file_ad_proto_depIdxs = []int32{
 	0, // 0: ad.GetAdByIdResponse.ad:type_name -> ad.Ad
 	1, // 1: ad.AdService.GetAdById:input_type -> ad.GetAdByIdRequest
 	3, // 2: ad.AdService.CreateAd:input_type -> ad.CreateAdRequest
-	2, // 3: ad.AdService.GetAdById:output_type -> ad.GetAdByIdResponse
-	4, // 4: ad.AdService.CreateAd:output_type -> ad.CreateAdResponse
-	3, // [3:5] is the sub-list for method output_type
-	1, // [1:3] is the sub-list for method input_type
+	5, // 3: ad.AdService.ServeAd:input_type -> ad.ServeAdRequest
+	2, // 4: ad.AdService.GetAdById:output_type -> ad.GetAdByIdResponse
+	4, // 5: ad.AdService.CreateAd:output_type -> ad.CreateAdResponse
+	6, // 6: ad.AdService.ServeAd:output_type -> ad.ServeAdResponse
+	4, // [4:7] is the sub-list for method output_type
+	1, // [1:4] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
 	1, // [1:1] is the sub-list for extension extendee
 	0, // [0:1] is the sub-list for field type_name
@@ -349,7 +446,7 @@ func file_ad_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ad_proto_rawDesc), len(file_ad_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
