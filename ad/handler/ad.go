@@ -56,3 +56,22 @@ func (h *AdServiceServer) GetAdById(ctx context.Context, req *proto.GetAdByIdReq
 		},
 	}, nil
 }
+
+func (h *AdServiceServer) ServeAd(ctx context.Context, req *proto.ServeAdRequest) (*proto.ServeAdResponse, error) {
+	res, err := h.AdRepository.GetAdById(ctx, req.AdId)
+	if err != nil {
+		fmt.Println("Error getting ad by ID:", err)
+		return nil, err
+	}
+	fmt.Println("Ad retrieved successfully:", res)
+
+	_, err = h.TrackerClient.UpdateCountTracker(ctx, &proto.UpdateCountTrackerRequest{AdId: req.AdId})
+	if err != nil {
+		fmt.Println("Error updating tracker count:", err)
+		return nil, err
+	}
+
+	return &proto.ServeAdResponse{
+		Url: res.Url,
+	}, nil
+}

@@ -2,9 +2,11 @@ package tracker
 
 import (
 	"context"
+	"fmt"
 	"github.com/NicoPant/ad-tracking/tracker/config"
 	"github.com/NicoPant/ad-tracking/tracker/db"
 	"github.com/google/uuid"
+	"go.mongodb.org/mongo-driver/bson"
 )
 
 const Collection = "trackers"
@@ -50,14 +52,21 @@ func (t *TrackerService) UpdateCountTracker(ctx context.Context, adId string) (*
 	defer cancel()
 
 	var tracker Tracker
-	err := collection.FindOne(ctx, map[string]interface{}{"adId": adId}).Decode(&tracker)
+	err := collection.FindOne(ctx, map[string]interface{}{"ad_id": adId}).Decode(&tracker)
 	if err != nil {
+		fmt.Println("Error finding tracker:", err)
 		return nil, err
 	}
 
 	tracker.Count += 1
 
-	_, err = collection.UpdateOne(ctx, map[string]interface{}{"adId": adId}, tracker)
+	filter := bson.M{"ad_id": tracker.AdId}
+	update := bson.M{
+		"$set": bson.M{
+			"count": tracker.Count,
+		},
+	}
+	_, err = collection.UpdateOne(ctx, filter, update)
 	if err != nil {
 		return nil, err
 	}

@@ -8,6 +8,7 @@ import (
 	"github.com/NicoPant/ad-tracking/proto"
 	"github.com/joho/godotenv"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 	"log"
 	"net"
 )
@@ -32,7 +33,7 @@ func main() {
 		log.Fatalf("Failed to listen: %v", err)
 	}
 
-	conn, err := grpc.Dial("localhost:9000", grpc.WithInsecure())
+	conn, err := grpc.NewClient("localhost:9000", grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		log.Fatalf("Failed to dial AdService: %v", err)
 	}
