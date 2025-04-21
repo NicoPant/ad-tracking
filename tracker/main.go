@@ -1,10 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"tracker/config"
 	"tracker/db"
-	//"tracker/handler"
-	//"tracker/model/ad"
+	"tracker/model/tracker"
 	//"tracker/proto"
 	"github.com/joho/godotenv"
 	"google.golang.org/grpc"
@@ -21,11 +21,13 @@ func init() {
 
 func main() {
 	cfg := config.LoadConfig()
-	//adService := ad.NewAdService(cfg)
+	trackerService := tracker.NewTrackerService(cfg)
 	err := db.InitMongo(cfg)
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	fmt.Println(trackerService)
 
 	lis, err := net.Listen("tcp", ":9000")
 	if err != nil {

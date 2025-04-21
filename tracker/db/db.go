@@ -30,7 +30,7 @@ func InitMongo(cfg *config.Config) error {
 	MongoClient = client
 	fmt.Println("MongoDB connected!")
 	// Create the database if it doesn't exist
-	_ = client.Database(cfg.MongoDatabase).CreateCollection(ctx, "ads")
+	_ = client.Database(cfg.MongoDatabase).CreateCollection(ctx, "trackers")
 	return nil
 }
 
