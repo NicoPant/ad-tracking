@@ -7,9 +7,8 @@ It includes two main services:
 - **Ad Service (`ad`)**: Manages advertisements with title, description and url. It also serves ad to the tracker service
 - **Tracker Service (`tracker`)**: Keep a count of a specific ad that was served.
 
----
-##  Prerequisites
 
+##  Prerequisites
 Make sure you have the following installed:
 
 - [Docker](https://www.docker.com/)
