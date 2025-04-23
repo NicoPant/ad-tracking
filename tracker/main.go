@@ -6,18 +6,17 @@ import (
 	"github.com/NicoPant/ad-tracking/tracker/db"
 	"github.com/NicoPant/ad-tracking/tracker/handler"
 	"github.com/NicoPant/ad-tracking/tracker/model/tracker"
-	"github.com/joho/godotenv"
 	"google.golang.org/grpc"
 	"log"
 	"net"
 )
 
-func init() {
+/*func init() {
 	err := godotenv.Load(".env")
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
-}
+}*/
 
 func main() {
 	cfg := config.LoadConfig()

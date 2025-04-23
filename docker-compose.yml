@@ -24,6 +24,31 @@ services:
     volumes:
       - mongodb_data:/data/db
 
+  adservice:
+    build:
+      context: .
+      dockerfile: ad/Dockerfile
+    container_name: adservice
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./ad/.env
+    depends_on:
+      - mongodb
+
+  trackerservice:
+    build:
+      context: .
+      dockerfile: tracker/Dockerfile
+    container_name: trackerservice
+    ports:
+      - "9000:9000"
+    env_file:
+      - ./tracker/.env
+    depends_on:
+      - mongodb
+      - adservice
+
 volumes:
   dragonflydata:
   mongodb_data:
