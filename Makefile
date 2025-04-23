@@ -19,4 +19,5 @@ install:
 	cp .env.example .env && \
 	cp ad/.env.example ad/.env && \
 	cp tracker/.env.example tracker/.env && \
-	start
+	docker compose build --no-cache && \
+	docker compose up -d
