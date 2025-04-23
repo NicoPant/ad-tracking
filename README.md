@@ -53,7 +53,7 @@ Message:
 }
 ```
 
-Response (the id is a generated)
+Response (the id is a generated):
 
 ```json
 {
@@ -90,7 +90,7 @@ Response:
 
 Increment the counter on the tracker linked to a specific ad and returns the url of the latter.
 
-Message
+Message:
 
 ```json
 {
@@ -98,8 +98,7 @@ Message
 }
 ```
 
-Response
-
+Response:
 ```json
 {
     "url": "test.com" 
