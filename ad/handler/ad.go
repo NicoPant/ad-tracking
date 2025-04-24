@@ -3,6 +3,7 @@ package handler
 import (
 	"context"
 	"fmt"
+
 	"github.com/NicoPant/ad-tracking/ad/model/ad"
 	"github.com/NicoPant/ad-tracking/proto"
 	"github.com/google/uuid"
@@ -15,8 +16,13 @@ type AdServiceServer struct {
 }
 
 func (h *AdServiceServer) CreateAd(ctx context.Context, req *proto.CreateAdRequest) (*proto.CreateAdResponse, error) {
+	if req == nil {
+		return nil, fmt.Errorf("request is nil")
+	}
+	if req.Title == "" || req.Description == "" || req.Url == "" {
+		return nil, fmt.Errorf("title, description, and url are required")
+	}
 	newUuid := uuid.NewString()
-
 	res, err := h.AdRepository.CreateAd(ctx, &ad.Ad{
 		Id:          newUuid,
 		Title:       req.Title,
@@ -41,6 +47,13 @@ func (h *AdServiceServer) CreateAd(ctx context.Context, req *proto.CreateAdReque
 }
 
 func (h *AdServiceServer) GetAdById(ctx context.Context, req *proto.GetAdByIdRequest) (*proto.GetAdByIdResponse, error) {
+	if req == nil {
+		return nil, fmt.Errorf("request is nil")
+	}
+	if req.Id == "" {
+		return nil, fmt.Errorf("ad ID is required")
+	}
+
 	res, err := h.AdRepository.GetAdById(ctx, req.Id)
 	if err != nil {
 		fmt.Println("Error getting ad by ID:", err)
@@ -58,6 +71,12 @@ func (h *AdServiceServer) GetAdById(ctx context.Context, req *proto.GetAdByIdReq
 }
 
 func (h *AdServiceServer) ServeAd(ctx context.Context, req *proto.ServeAdRequest) (*proto.ServeAdResponse, error) {
+	if req == nil {
+		return nil, fmt.Errorf("request is nil")
+	}
+	if req.AdId == "" {
+		return nil, fmt.Errorf("ad ID is required")
+	}
 	res, err := h.AdRepository.GetAdById(ctx, req.AdId)
 	if err != nil {
 		fmt.Println("Error getting ad by ID:", err)

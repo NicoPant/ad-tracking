@@ -36,7 +36,7 @@ ad is available at **localhost:8000** ((inside Docker network as adservice:8000)
 
 tracker is available at **localhost:9000** ((inside Docker network as trackerservice:9000)
 
-It is to be tested with **Postman** or any other gRPC client. If you do use Postman, make sure to use the **`ad.proto`** file.
+It is to be tested with **Postman** or any other gRPC client. If you do use Postman, make sure to use the **`ad.proto`** file in the **./proto** folder.
 
 Here are the different requests that you can make:
 
